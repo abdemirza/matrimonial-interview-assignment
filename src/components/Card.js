@@ -1,15 +1,17 @@
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image, StyleSheet, Pressable} from 'react-native';
 import React from 'react';
 import {windowWidth} from '../constants/dimension';
 import Colors from '../constants/colors';
 import CircleIcon from './CircleIcon';
 import IconButton from './IconButton';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Card(props) {
     console.log(props.uri)
   const {uri} = props;
+  const navigation = useNavigation()
   return (
-    <View style={styles.container}>
+    <Pressable onPress={()=>navigation.navigate('User')} style={styles.container}>
       <Image
         source={{uri: uri}}
         style={styles.image}
@@ -27,7 +29,7 @@ export default function Card(props) {
           <IconButton />
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 const styles = StyleSheet.create({

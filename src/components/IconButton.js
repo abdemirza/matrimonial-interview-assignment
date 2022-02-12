@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: Colors.GREEN_PRIMARY,
         paddingHorizontal:3,
-        height:30
+        height:30,
         
     },
     heading:{
